@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoSync", "src\RoSync.vcxproj", "{F10A661E-E62E-458B-8939-D9762D1B16F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Linux_Debug|x64 = Linux_Debug|x64
+		Linux_Debug|x86 = Linux_Debug|x86
+		Linux_Release|x64 = Linux_Release|x64
+		Linux_Release|x86 = Linux_Release|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Debug|x64.ActiveCfg = Debug|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Debug|x64.Build.0 = Debug|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Debug|x86.ActiveCfg = Debug|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Debug|x86.Build.0 = Debug|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Debug|x64.ActiveCfg = Linux_Debug|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Debug|x64.Build.0 = Linux_Debug|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Debug|x86.ActiveCfg = Linux_Debug|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Debug|x86.Build.0 = Linux_Debug|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Release|x64.ActiveCfg = Linux_Release|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Release|x64.Build.0 = Linux_Release|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Release|x86.ActiveCfg = Linux_Release|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Linux_Release|x86.Build.0 = Linux_Release|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Release|x64.ActiveCfg = Release|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Release|x64.Build.0 = Release|x64
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Release|x86.ActiveCfg = Release|Win32
+		{F10A661E-E62E-458B-8939-D9762D1B16F4}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2963E9A6-D90E-4278-AB7F-F9248AF9E5D7}
+	EndGlobalSection
+EndGlobal

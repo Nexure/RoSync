@@ -1,0 +1,9 @@
+test/
+build/
+Debug/
+Release/
+.vs/
+.vscode/
+vcpkg_installed/
+
+*.obj
