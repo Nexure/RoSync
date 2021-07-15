@@ -1,3 +1,0 @@
-# RoSync
-
-TODO: complete
