@@ -4,25 +4,36 @@
 #include <thread>
 #include <future>
 
+#include <request.h>
+
 constexpr short PORT = 7777;
 
 void handler(uWS::HttpResponse<false>* response, uWS::HttpRequest* request) {
-	response->onData([=](auto data, auto is_final) {
-		//std::cout << data << std::endl;
-		std::cout << "is_final: " << is_final << std::endl;
-	});
 
-	response->onAborted([=]() {
-
+	rosync::http::RequestBuilder builder;
+	
+	response->onData([&](auto data, auto is_final) {
+		builder.append(data, is_final);
 	});
+	
+	response->onAborted([&]() {
+		builder.abort();
+		// TODO: clean up, although since builder is stack initialised - it'll be cleaned up.
+	});
+	
+	// TODO: await here!
+	if (!builder.await()) {
+		auto result = builder.finish();
+		// TODO: pass request to body after awaiting
+	}
 }
 
 void start_webserver() {
 	uWS::App server_instance;
 
 	server_instance
-		.get("/endpoint", [](auto res, auto req) {
-			std::async(std::bind(handler, res, req));
+		.post("/endpoint", [](auto res, auto req) {
+			auto async_result = std::async([res, req] { return handler(res, req); });
 		})
 		.listen(PORT, [&](auto* token) {
 			//std::scoped_lock lock(webserver_mutex);

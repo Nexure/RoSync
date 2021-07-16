@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <shared_mutex>
 
 namespace rosync::http {
 	enum class RequestType {
@@ -24,5 +25,24 @@ namespace rosync::http {
 		}
 	}
 
+	class Request {
+		std::string body_;
+		
+		explicit Request(std::string body);
+	public:
+		friend class RequestBuilder;
+	};
 	
-}
+	class RequestBuilder {
+		std::string buffer_;
+		std::shared_mutex lock_;
+		std::condition_variable_any conditional_var_;
+		std::atomic<bool> aborted_ = false;
+		std::atomic<bool> finished_ = false;
+	public:
+		void append(std::string_view data, bool finished = false);
+		bool await();
+		void abort();
+		[[nodiscard]] std::unique_ptr<Request> finish() const;
+	};
+} 

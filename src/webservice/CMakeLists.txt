@@ -1,6 +1,6 @@
 # CMakeLists.txt : CMake Project for RoSync WebService
 
-set (SOURCES src/webservice.cpp)
+set (SOURCES src/webservice.cpp src/request.cpp)
 
 find_path(UWEBSOCKETS_INCLUDE_DIRS "uwebsockets/App.h")
 
